@@ -1,0 +1,34 @@
+# server配置
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+#druid连接池
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://localhost:3306/dp_security?characterEncoding=utf-8&serverTimezone=UTC
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.drip.pojo
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-delete-field: del_flag
+      logic-not-delete-value: 0
+    # 配置MyBatis-Plus操作表的默认前缀=>@TableName
+    # table-prefix: t_
+    # 配置MyBatis-Plus的主键策略=>@TableID(type=?)
+    id-type: auto
+#jwt配置
+#jwt:
+#  token:
+#    tokenExpiration: 120 #有效时间,单位分钟
+#    tokenSignKey: headline123456 #当前程序签名秘钥 自定义

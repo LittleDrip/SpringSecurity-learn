@@ -1,11 +1,14 @@
 package com.drip;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringSecurityApplication {
+@MapperScan("com.drip.mapper")
+
+public class TokenApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringSecurityApplication.class,args);
+        SpringApplication.run(TokenApplication.class,args);
     }
 }
