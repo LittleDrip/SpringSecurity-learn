@@ -13,6 +13,11 @@ spring:
       username: root
       password: 123456
       driver-class-name: com.mysql.cj.jdbc.Driver
+#Redis配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
 
 mybatis-plus:
   configuration:
@@ -32,3 +37,4 @@ mybatis-plus:
 #  token:
 #    tokenExpiration: 120 #有效时间,单位分钟
 #    tokenSignKey: headline123456 #当前程序签名秘钥 自定义
+
